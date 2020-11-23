@@ -1,0 +1,30 @@
+<div class="cuerpo">
+    <div class="container contenido">
+        
+            <p class="tituloContainer"><i class="fas fa-paw"></i>CONSULTA DE ABONOS</p><br>
+            
+            <button class="btn-azul" (click)="openModalManipulador()">
+                <i class="fas fa-plus-circle"></i> Agregar Abono</button><br><br>
+            <hr>
+        <table class="table table-striped" *ngIf='abonos && abonos.length'>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">id Abono</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Valor Abono</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let abono of abonos ; index as i "
+                    (click)="seleccionar(abono)">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ abono.idAbono}} </td>
+                    <td>{{ abono.fecha}}</td>
+                    <td>{{ abono.valorAbono }}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
